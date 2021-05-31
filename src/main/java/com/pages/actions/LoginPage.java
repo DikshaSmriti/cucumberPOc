@@ -10,48 +10,46 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends DriverFactory {
 
     public LoginPageLocators loginPageLocators;
+    private SeleniumHelper seleniumHelper = new SeleniumHelper();
 
-     public LoginPage() {
-
+    public LoginPage() {
         this.loginPageLocators = new LoginPageLocators();
         PageFactory.initElements(getDriver(), this.loginPageLocators);
     }
 
     public String getPageTitle() {
 
-        return getDriver().getTitle();
+        return seleniumHelper.getPageTitle(getDriver());
     }
 
     public boolean isForgotPwdLinkExist() {
-
-        return loginPageLocators.forgotPwdLink.isDisplayed();
+        return seleniumHelper.isEelementDisplayed(getDriver(), loginPageLocators.forgotPwdLink);
     }
 
     public void enterUserName(String username) {
 
-        loginPageLocators.emailAddressTextBox.sendKeys(username);
+        seleniumHelper.enterKeys(getDriver(),loginPageLocators.emailAddressTextBox,username);
     }
 
     public void enterPassword(String pwd) {
-        loginPageLocators.password.sendKeys(pwd);
+
+        seleniumHelper.enterKeys(getDriver(),loginPageLocators.password,pwd);
 
     }
 
     public void clickOnLogin() {
+        seleniumHelper.click(getDriver(),loginPageLocators.signInButton);
 
-        loginPageLocators.signInButton.click();
 
     }
 
     public void doLogin(String userName, String pwd) {
-        System.out.println("username is: "+userName);
-        System.out.println("password is: "+pwd);
-        System.out.println("loginPageLocators is: "+loginPageLocators);
-        SeleniumHelper seleniumHelper=new SeleniumHelper();
-        seleniumHelper.waitForElementExistence(getDriver(),  loginPageLocators.emailAddressTextBox);
-        loginPageLocators.emailAddressTextBox.sendKeys(userName);
-        loginPageLocators.password.sendKeys(pwd);
-        loginPageLocators.signInButton.click();
+        System.out.println("username is: " + userName);
+        System.out.println("password is: " + pwd);
+        System.out.println("loginPageLocators is: " + loginPageLocators);
+        seleniumHelper.enterKeys(getDriver(),loginPageLocators.emailAddressTextBox,userName);
+        seleniumHelper.enterKeys(getDriver(),loginPageLocators.password,pwd);
+        seleniumHelper.click(getDriver(),loginPageLocators.signInButton);
 //        return new MyAccountPage(driver);
     }
 

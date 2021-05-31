@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="34.589">
+<testcase classname="Check accounts tab" name="Check accounts page title" time="4.236">
+<failure message="" type="java.lang.NullPointerException"><![CDATA[Given User logs in to app with credentials..................................failed
+Given user is on accounts page..............................................skipped
+When user gets the title of the page........................................skipped
+Then page title should be "My account - My Store"...........................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at stepDefinitions.AccountsPageSteps.user_logs_in_to_app_with_credentials(AccountsPageSteps.java:25)
+	at ✽.User logs in to app with credentials(file:///C:/Users/6111028/IdeaProjects/BDD_fw/src/test/resources/featureFiles/appFeatures/accounts.feature:4)
+]]></failure>
+</testcase>
+<testcase classname="Check accounts tab" name="Check the accounts section count" time="2.494">
+<failure message="" type="java.lang.NullPointerException"><![CDATA[Given User logs in to app with credentials..................................failed
+Given user is on accounts page..............................................skipped
+Then user gets accounts options.............................................skipped
+And accounts section count should be 5......................................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at stepDefinitions.AccountsPageSteps.user_logs_in_to_app_with_credentials(AccountsPageSteps.java:25)
+	at ✽.User logs in to app with credentials(file:///C:/Users/6111028/IdeaProjects/BDD_fw/src/test/resources/featureFiles/appFeatures/accounts.feature:4)
+]]></failure>
+</testcase>
+<testcase classname="Login page features" name="Login page title" time="9.763">
+<system-out><![CDATA[Given user is on login page.................................................passed
+When user gets the title of the page........................................passed
+Then page title should be "Login - My Store"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login page features" name="Forgot Password link" time="8.867">
+<failure message="" type="java.lang.NullPointerException"><![CDATA[Given user is on login page.................................................passed
+Then forgot your password link should be displayed..........................failed
+
+StackTrace:
+java.lang.NullPointerException
+	at com.pages.actions.LoginPage.isForgotPwdLinkExist(LoginPage.java:26)
+	at stepDefinitions.LoginPageSteps.forgot_your_password_link_should_be_displayed(LoginPageSteps.java:41)
+	at ✽.forgot your password link should be displayed(file:///C:/Users/6111028/IdeaProjects/BDD_fw/src/test/resources/featureFiles/appFeatures/login.feature:10)
+]]></failure>
+</testcase>
+<testcase classname="Login page features" name="Login with correct credentials" time="9.025">
+<failure message="" type="java.lang.NullPointerException"><![CDATA[Given user is on login page.................................................passed
+When user enters username "smritidiksha29@gmail.com"........................failed
+And user enters password "Qwerty12345"......................................skipped
+And user clicks on Login button.............................................skipped
+Then user gets the title of the page........................................skipped
+And page title should be "My account - My Store"............................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at com.pages.actions.LoginPage.enterUserName(LoginPage.java:31)
+	at stepDefinitions.LoginPageSteps.user_enters_username(LoginPageSteps.java:46)
+	at ✽.user enters username "smritidiksha29@gmail.com"(file:///C:/Users/6111028/IdeaProjects/BDD_fw/src/test/resources/featureFiles/appFeatures/login.feature:14)
+]]></failure>
+</testcase>
+</testsuite>

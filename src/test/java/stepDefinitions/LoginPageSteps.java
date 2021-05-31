@@ -1,8 +1,7 @@
 package stepDefinitions;
 
 import com.pages.actions.LoginPage;
-import com.qa.factory.DriverFactory;
-import com.qa.util.ConfigReader;
+import com.genericUtils.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
