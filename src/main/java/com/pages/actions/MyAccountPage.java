@@ -1,5 +1,6 @@
 package com.pages.actions;
 
+import com.genericUtils.SeleniumHelper;
 import com.pages.locators.MyAccountPageLocators;
 import com.qa.factory.DriverFactory;
 import org.openqa.selenium.By;
@@ -12,10 +13,11 @@ import java.util.List;
 
 public class MyAccountPage extends DriverFactory {
     public MyAccountPageLocators myAccountPageLocators;
+    public SeleniumHelper seleniumHelper = new SeleniumHelper();
 
     public MyAccountPage() {
         myAccountPageLocators = new MyAccountPageLocators();
-        PageFactory.initElements(driver, this.myAccountPageLocators);
+        PageFactory.initElements(getDriver(), this.myAccountPageLocators);
     }
 
     public ArrayList<String> myAccountDetails() {
@@ -31,5 +33,9 @@ public class MyAccountPage extends DriverFactory {
     public int getOptionsCount() {
 
         return myAccountPageLocators.options.size();
+    }
+
+    public void waitForVisibilityOfMyAccountTab(){
+        seleniumHelper.waitForElementExistence(getDriver(), myAccountPageLocators.myAccountTab);
     }
 }

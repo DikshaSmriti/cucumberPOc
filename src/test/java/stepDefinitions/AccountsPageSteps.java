@@ -30,7 +30,7 @@ public class AccountsPageSteps {
 
     @Given("user is on accounts page")
     public void user_is_on_accounts_page() {
-
+        accountsPage.waitForVisibilityOfMyAccountTab();
         System.out.println("Page title is: " + loginPage.getPageTitle());
     }
 

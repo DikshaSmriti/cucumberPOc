@@ -11,4 +11,7 @@ public class MyAccountPageLocators {
 
     @FindBy(xpath = "//div[@class='col-xs-12 col-sm-6 col-lg-4']//span")
     public List<WebElement> options;
+
+    @FindBy(xpath =  "//span[text()='My account']")
+    public WebElement myAccountTab;
 }

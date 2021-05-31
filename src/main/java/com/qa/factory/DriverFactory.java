@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverFactory {
-    public WebDriver driver;
+
 
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
